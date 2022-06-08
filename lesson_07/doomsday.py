@@ -1,0 +1,17 @@
+
+from math import floor, sqrt
+
+inputs = [100000, 12, 7, 1]
+
+def solve(x):
+    result = []
+    while(x > 0):
+        max_panel_square = floor(sqrt(x)) ** 2
+        print(max_panel_square)
+        x -= max_panel_square
+        result.append(max_panel_square)
+    return result
+
+for i in inputs:
+    solve(i)
+
