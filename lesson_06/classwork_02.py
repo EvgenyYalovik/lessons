@@ -1,19 +1,28 @@
 """
-Написать функцию которая возвращают случайным образом одну карту из стандартной колоды в 36 карт,
-где на первом месте номинал карты номинал
-(6 - 10, J, D, K, A), а на втором название масти (Hearts, Diamonds, Clubs, Spades).
+Доработать первое задание так, чтобы словарь читался из текстового CSV файла,
+где на каждой строке пары слов вида: apple,яблоко.
 """
-
-import random
-
-n = ("6", "7", "8", "9", "10", "j", "q", "k", "a")
-m = ("h", "d", "c", "s")
+import csv
 
 
-def get_random_card():
-    random_n = random.choice(n)
-    random_m = random.choice(m)
-    return random_m, random_n
+with open("dictionary.csv", "r") as file:
+    my_dict = {row[0]: row[1] for row in csv.reader(file)}
 
-for _ in range(5):
-    print(get_random_card())
+
+def eng_to_rus(word):
+    return my_dict[word]
+
+
+def rus_to_eng(word):
+    new_dict = {
+        value: key
+        for key, value in my_dict.items()
+    }
+    return new_dict[word]
+
+
+print(eng_to_rus("apple"))
+print(eng_to_rus("fly"))
+
+print(rus_to_eng("яблоко"))
+print(rus_to_eng("зеленый"))
