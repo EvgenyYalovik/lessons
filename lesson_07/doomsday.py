@@ -14,4 +14,3 @@ def solve(x):
 
 for i in inputs:
     solve(i)
-
