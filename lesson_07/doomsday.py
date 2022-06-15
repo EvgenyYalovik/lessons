@@ -1,7 +1,7 @@
 
 from math import floor, sqrt
 
-inputs = [100000, 12, 7, 1]
+inputs = [12, 127, 332, 982, 4372, 11467]
 
 def solve(x):
     result = []

@@ -6,10 +6,10 @@
 """
 
 class Car:
-    brand = ''
-    model = ''
-    year = " "
-    speed = 0
+    brand = None
+    model = None
+    year = None
+    speed = None
 
     def speedup(self):
         self.speed +=5
